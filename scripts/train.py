@@ -2,7 +2,8 @@ import os
 import sys
 sys.path.append("./")
 sys.path.append("../")
-sys.path.append("./submodel/")
+sys.path.append("./submodel")
+sys.path.append("./submodel/stylegan2_pytorch")
 
 from lib.utils import save_image
 from lib.config import Config

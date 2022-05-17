@@ -1,5 +1,5 @@
 # model 
-model_id: YourModel
+model_id: RAFS
 
 # multi-GPUs
 use_mGPU: True
@@ -13,9 +13,8 @@ wandb_alert_thres: 1000
 
 # root
 train_dataset_root_list: [
-                "/media/deep3090/새 볼륨/celeba_hq",
-                # '/home/compu/dataset/CelebHQ',
-                # '/home/compu/dataset/ffhq16k'
+                '/home/compu/dataset/CelebHQ',
+                '/home/compu/dataset/ffhq16k'
             ]
 valid_dataset_root: assets/valid
 save_root: train_result
@@ -23,34 +22,27 @@ save_root: train_result
 # learning rate
 lr_G: 0.0001
 lr_D: 0.00001
-beta1: 0
+beta1: 0.9
 beta2: 0.999
 
 # weight of loss
-W_adv: 1
-W_id: 5
-W_recon: 10
-W_cycle: 0
-W_lpips: 0
-W_attr: 10
+W_id: 0.15
+W_recon: 1
+W_lpips: 0.8
+W_token: 1
 
 # hyperparameters
 same_prob: 0.2
-batch_per_gpu: 4
+batch_per_gpu: 8
 max_step: 400000
 
 # log cycle
 loss_cycle: 10
-test_cycle: 1000
-ckpt_cycle: 10000
+test_cycle: 100
+ckpt_cycle: 4000
 
 # ckpt path
 # blank is None, but None is "None"
-load_ckpt: False
-ckpt_id: test
-ckpt_step: 0
-# ckpt_id: run0424
-# ckpt_step: 30000
-
-## Pretrained models paths
-arcface_path: ptnn/arcface.pth
+load_ckpt: True
+ckpt_id: third_try_Transformer
+ckpt_step: 

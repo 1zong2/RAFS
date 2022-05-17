@@ -1,9 +1,9 @@
 import numpy as np
-from your_model.model import YourModel
+from rafs.model import RAFSModel
 
 def CreateModel(gpu, args):
 
-    model = YourModel(args, gpu)
+    model = RAFSModel(args, gpu)
     args.isMaster = gpu == 0
     model.RandomGenerator = np.random.RandomState(42)
     model.initialize_models()
